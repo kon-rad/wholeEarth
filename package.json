@@ -1,5 +1,5 @@
 {
-  "name": "reactboilerplate",
+  "name": "wholeearth",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -7,6 +7,7 @@
     "@babel/core": "^7.4.3",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
+    "express": "^4.16.4",
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -39,7 +40,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --hot --mode development",
+    "dev": "webpack-dev-server --open --hot --mode development",
+    "start": "NODE_ENV=production node index.js",
     "build": "webpack --mode production",
     "lint": "./node_modules/.bin/eslint src",
     "lint-fixup": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
