@@ -5,7 +5,9 @@
   "main": "webpack.config.js",
   "dependencies": {
     "@babel/core": "^7.4.3",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
+    "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.30.0",
@@ -13,6 +15,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "css-loader": "^2.1.1",
