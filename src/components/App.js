@@ -73,6 +73,7 @@ export default class App extends React.Component {
     return (
       <div className="space_background" style={backgroundStyle}>
         <div className="info">
+          <i className="info_icon large material-icons">info_outline</i>
           <h1>DSCOVR - EPIC image</h1>
           taken on: {dateTime}
           <span className="info_arrows">

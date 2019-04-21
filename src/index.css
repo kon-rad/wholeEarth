@@ -9,7 +9,7 @@
 .info {
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    width: 340px;
+    max-width: 340px;
     padding: 6px;
 }
 .info_arrows {
@@ -19,4 +19,12 @@
 .arrows i {
     cursor: pointer;
     font-size: 40px;
+}
+.info_icon {
+    display: none;
+}
+@media (max-width: 600px) {
+    .info_icon {
+        display: block;
+    }
 }
