@@ -40,7 +40,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --hot --mode development",
+    "dev": "webpack-dev-server --open --hot --mode development",
     "prod": "NODE_ENV=production node index.js",
     "build": "webpack --mode production",
     "lint": "./node_modules/.bin/eslint src",

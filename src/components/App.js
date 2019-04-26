@@ -82,6 +82,9 @@ export default class App extends React.Component {
             <i onClick={this.getPrevImage} className="large material-icons">arrow_back</i>
             <i onClick={this.getNextImage} className="large material-icons">arrow_forward</i>
           </span>
+          <div className="range_wrapper">
+            <input orient="vertical" type="range" min="" id="range" max="" />
+          </div>
         </div>
       </div>
     )
