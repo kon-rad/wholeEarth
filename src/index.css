@@ -14,6 +14,7 @@ body {
     font-family: 'Roboto', sans-serif;
     max-width: 340px;
     padding: 6px;
+    text-align: center;
 }
 .info_arrows {
     display: flex;
@@ -25,6 +26,13 @@ body {
 }
 .info_icon {
     display: none;
+}
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 input[type=range][orient=vertical]
 {

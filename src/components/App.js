@@ -19,6 +19,16 @@ export default class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", this._handleKeyDown);
+    camera
+      .getLatestMetadata()
+      .then(res => {
+        if (!res) return console.log('error');
+        this.setState({ data: res, ...this.updateImage(res.length-1, res) });
+      })
+  }
+
   _handleKeyDown = (e) => {
     switch(e.keyCode) {
       case RIGHT_KEY:
@@ -49,14 +59,10 @@ export default class App extends React.Component {
     return { imageIndex, image, identifier, imagePath, imageDate };
   };
 
-  componentDidMount() {
-    document.addEventListener("keydown", this._handleKeyDown);
-    camera
-      .getLatestMetadata()
-      .then(res => {
-        if (!res) return console.log('error');
-        this.setState({ data: res, ...this.updateImage(res.length-1, res) });
-      })
+  handleRangeChange = e => {
+    console.log(e.target.value);
+    const { data } = this.state;
+    this.setState({ ...this.updateImage(e.target.value, data) });
   }
 
   render() {
@@ -75,15 +81,17 @@ export default class App extends React.Component {
         <div className="info">
           {/*<i className="info_icon large material-icons">info_outline</i>*/}
           taken on: {dateTime}
-          <span className="info_arrows">
-            use keys or arrows to move in time:
-          </span>
-          <span className="arrows">
-            <i onClick={this.getPrevImage} className="large material-icons">arrow_back</i>
-            <i onClick={this.getNextImage} className="large material-icons">arrow_forward</i>
-          </span>
-          <div className="range_wrapper">
-            <input orient="vertical" type="range" min="" id="range" max="" />
+          <div className="controls">
+            <span className="info_arrows">
+              use keyboard or click arrows to move in time:
+            </span>
+            <span className="arrows">
+              <i onClick={this.getPrevImage} className="large material-icons">arrow_back</i>
+              <i onClick={this.getNextImage} className="large material-icons">arrow_forward</i>
+            </span>
+            <div className="range_wrapper">
+              <input orient="horizontal" type="range" min="0" id="range" max="19" onChange={e => this.handleRangeChange(e)}/>
+            </div>
           </div>
         </div>
       </div>
