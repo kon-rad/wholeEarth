@@ -24,3 +24,5 @@ module.exports = {
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
   },
 };
+
+// todo: fix lint error Cannot find module 'eslint-config-airbnb'

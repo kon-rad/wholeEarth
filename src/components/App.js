@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import EPICCamera from '../util/EPICCamera';
 import { getHumanDateTime } from '../util/DataFormatter';
 
@@ -79,7 +79,6 @@ export default class App extends React.Component {
     return (
       <div className="space_background" style={backgroundStyle}>
         <div className="info">
-          {/*<i className="info_icon large material-icons">info_outline</i>*/}
           taken on: {dateTime}
           <div className="controls">
             <span className="info_arrows">
