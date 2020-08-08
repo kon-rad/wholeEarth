@@ -20,16 +20,16 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", this._handleKeyDown);
+    document.addEventListener('keydown', this.handleKeyDown);
     camera
       .getLatestMetadata()
       .then(res => {
-        if (!res) return console.log('error');
+        if (!res) return console.error('error fetching image');
         this.setState({ data: res, ...this.updateImage(res.length-1, res) });
       })
   }
 
-  _handleKeyDown = (e) => {
+  handleKeyDown = (e) => {
     switch(e.keyCode) {
       case RIGHT_KEY:
         this.getNextImage();
@@ -79,7 +79,7 @@ export default class App extends React.Component {
     return (
       <div className="space_background" style={backgroundStyle}>
         <div className="info">
-          taken on: {dateTime}
+          image taken on: {dateTime}
           <div className="controls">
             <span className="info_arrows">
               use keyboard or click arrows to move in time:
